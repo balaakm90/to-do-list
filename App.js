@@ -1,12 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Login from "./screens/Login";
-import AddItem from "./screens/AddItem";
+import { StyleSheet, View } from "react-native";
+import LoginScreen from "./components/LoginScreen";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <AddItem />
+      <LoginScreen />
     </View>
   );
 }
