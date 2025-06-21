@@ -1,19 +1,21 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Login from "./screens/Login";
-import AddItem from "./screens/AddItem";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './components/LoginScreen';
+import HomeScreen from './components/HomeScreen';
+import ScreenControl from './components/ScreenControl';
+import { enableScreens } from 'react-native-screens';
+
+enableScreens();
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <AddItem />
-    </View>
+    <ScreenControl />
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Login">
+    //     <Stack.Screen name="Login" component={LoginScreen} />
+    //     <Stack.Screen name="Home" component={HomeScreen} />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 40,
-  },
-});
